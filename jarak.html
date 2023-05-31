@@ -8,10 +8,17 @@
 </head>
 <body>
 
+    <h1>Latitude is : <label id="latitude"></label></h1>
+    <h1>Longitude is : <label id="longitude"></label></h1>
+
     <script>
         navigator.geolocation.getCurrentPosition( (position)=> {
             console.log("Latitude is :", position.coords.latitude);
             console.log("Longitude is :", position.coords.longitude);
+
+            document.getElementById("latitude").innerHTML = position.coords.latitude;
+            document.getElementById("longitude").innerHTML = position.coords.longitude;
+
         })
     </script>
     <!-- <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&libraries=geometry"></script>
